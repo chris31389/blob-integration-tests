@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-[Here is an example](https://github.com/chris31389/redis-integration-tests) of using Testcontainers to spin up throwaway instances of a Redis container and targeting it when running Integration tests.
+[Here is an example](https://github.com/chris31389/redis-integration-tests) of using Testcontainers to spin up local throwaway instances of a Redis container and targeting it when running Integration tests.
 
 ## Introduction
 
@@ -125,6 +125,6 @@ This repository is actively being developed and there are already people develop
 
 ## Useful links
 
-[My example using Redis](https://github.com/chris31389/redis-integration-tests)
-[Docker](https://www.docker.com/get-started/)
-[Testcontainers](https://github.com/testcontainers/testcontainers-dotnet)
+- [My example using Redis](https://github.com/chris31389/redis-integration-tests)
+- [Docker](https://www.docker.com/get-started/)
+- [Testcontainers](https://github.com/testcontainers/testcontainers-dotnet)
