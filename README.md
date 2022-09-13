@@ -8,7 +8,7 @@
 
 This blog post aims to guide you through an alternative way of running Integration Tests within your project.  We look to make use of [Testcontainers](https://github.com/testcontainers/testcontainers-dotnet) which support tests with throwaway instances of Docker containers.  This means we can run tests without going to a deployed instance of the service we look to integrate with, saving time on round-trip-times.  All code talked about in this post will be [available here](https://github.com/chris31389/redis-integration-tests)
 
-For the purposes of our project, an Integration Test is defined as an automated test written to test the interaction between code that we have written with a third party service.  The goal is to prove that the code can communicate as expected with the third party service.
+For the purposes of our project, an Integration Test is defined as an automated test written to test the interaction between code that we have written with a third party service.  The goal is to prove that the code can communicate as expected with the third party service so that we can identify any defects before it reaches a later stage of the development cycle.
 
 We will use Docker containers.  To follow along, you will need to have Docker (or equivalent) set up and running.  Testcontainers will spin up container instances which will be used to execute tests against.  Each test will have a dedicated container instance so that tests can be run in parallel without affecting other tests.
 
@@ -21,6 +21,9 @@ By using a container, we can execute tests locally without depending on the thir
 For this example, we will test a class that will integrate with Redis.  I've created two projects, one to contain the class that will be tested and another to execute tests.
 
 I've created a class called `Cache`
+
+https://github.com/chris31389/redis-integration-tests/blob/8b8f838f0354d130670c8b20ec48a439a9ee1b7e/RedisExample/Cache.cs
+
 
 ``` csharp
 // https://github.com/chris31389/redis-integration-tests/blob/main/RedisExample/Cache.cs
@@ -119,7 +122,10 @@ public class CacheTests : IAsyncLifetime
 
 This blog post has shown that we can execute integration tests locally which target a Docker container.  Anyone with Docker installed and running can clone this repository, build and test it.  They are not required to install or provision an instance of Redis to execute these tests.  This should help speed up and improve the development process.
 
-There are limitations.  Not all third party services can be containerised.  Azure Service Bus is an example of this.  Also not every third party service has a pre-made setup class.  For example, with Cosmos, it is possible to setup, but there would need to be more code used to setup the Testcontainer.  You would have to expose the correct ports and select the correct Docker container image.
+There are limitations:
+
+- Not all third party services can be containerised (e.g. Azure Service Bus)  
+- Not every third party service has a pre-made setup class, which means there will need be a Testcontainer class written for the missing service.
 
 This repository is actively being developed and there are already people developing a cosmos and azurite Testcontainer setup class.  As these get introduced, it will be quicker and easier to get started with these services.
 
