@@ -22,9 +22,6 @@ For this example, we will test a class that will integrate with Redis.  I've cre
 
 I've created a class called `Cache`
 
-https://github.com/chris31389/redis-integration-tests/blob/8b8f838f0354d130670c8b20ec48a439a9ee1b7e/RedisExample/Cache.cs
-
-
 ``` csharp
 // https://github.com/chris31389/redis-integration-tests/blob/main/RedisExample/Cache.cs
 using StackExchange.Redis;
