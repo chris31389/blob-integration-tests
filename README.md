@@ -6,7 +6,7 @@
 
 ## Introduction
 
-This blog post aims to guide you through an alternative way of running Integration Tests within your project.  We look to make use of [Testcontainers](https://github.com/testcontainers/testcontainers-dotnet) which support tests with throwaway instances of Docker containers.  This means we can run tests without going to a deployed instance of the service we look to integrate with, saving time on round-trip-times.  All code talked about in this post will be [available here](https://github.com/chris31389/redis-integration-tests)
+This blog post aims to guide you through an alternative way of running Integration Tests within your project.  We look to make use of [Testcontainers](https://github.com/testcontainers/testcontainers-dotnet) which support tests with throwaway instances of Docker containers.  A list of the pre-configured containers can he found [here](https://github.com/testcontainers/testcontainers-dotnet#pre-configured-containers).  This means we can run tests without going to a deployed instance of the service we look to integrate with, saving time on round-trip-times.  All code talked about in this post will be [available here](https://github.com/chris31389/redis-integration-tests)
 
 For the purposes of our project, an Integration Test is defined as an automated test written to test the interaction between code that we have written with a third party service.  The goal is to prove that the code can communicate as expected with the third party service so that we can identify any defects before it reaches a later stage of the development cycle.
 
