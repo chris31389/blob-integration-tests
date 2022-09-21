@@ -20,8 +20,6 @@ By using a container, we can execute tests locally without depending on the thir
 
 For this example, we will test a class that will integrate with Redis.  I've created two projects, one to contain the class that will be tested and another to execute tests.
 
-I've created a class called `Cache`
-
 ``` csharp
 // https://github.com/chris31389/redis-integration-tests/blob/main/RedisExample/Cache.cs
 using StackExchange.Redis;
@@ -58,7 +56,6 @@ The test we want to execute needs to interact with the instance of redis.  We ne
 
 The DotNet NuGet `Testcontainers` (currently version 2.20) gives us the ability to spin up container instances per test.  For Redis there is a pre-configured `RedisTestcontainer` we can use to provide us an instance of redis within a container.
 
-`CacheTests`
 ``` csharp
 // https://github.com/chris31389/redis-integration-tests/blob/main/RedisExample.IntegrationTests/CacheTests.cs
 using DotNet.Testcontainers.Builders;
